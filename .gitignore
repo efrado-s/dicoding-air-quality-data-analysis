@@ -1,0 +1,10 @@
+# Ignore virtual environment related files
+Lib/
+etc/
+Include/
+Scripts/
+share/
+
+# Ignore .cfg
+*.cfg
+
