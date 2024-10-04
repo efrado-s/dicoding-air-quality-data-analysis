@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
+import os
 
 st.header("Dicoding Air Quality Analysis Dashboard")
 st.markdown(
@@ -16,7 +17,9 @@ st.markdown(
     """
 )
 
-main_df = pd.read_csv("main_data.csv")
+# Read csv
+file_name = "main_data.csv"
+main_df = pd.read_csv(os.path.join(os.getcwd(), file_name))
 
 st.dataframe(data=main_df)
 
