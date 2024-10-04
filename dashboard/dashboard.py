@@ -19,7 +19,25 @@ st.markdown(
 
 # Read csv
 file_name = "main_data.csv"
-main_df = pd.read_csv(os.path.join(os.getcwd(), file_name))
+# Check if the file exists in the current working directory
+if not os.path.isfile(file_name):
+    # Try to change to the 'dashboard' directory
+    try:
+        os.chdir('dashboard')
+    except FileNotFoundError:
+        print("Error: The 'dashboard' directory does not exist.")
+        raise  # Optionally raise the error to stop execution
+    except PermissionError:
+        print("Error: Permission denied when trying to change to the 'dashboard' directory.")
+        raise
+
+# Now check again for the file in the new directory
+if not os.path.isfile(file_name):
+    print(f"Error: The file '{file_name}' does not exist in the current directory.")
+else:
+    # Read the CSV file
+    main_df = pd.read_csv(file_name)
+    print("CSV file read successfully.")
 
 st.dataframe(data=main_df)
 
