@@ -1,1 +1,2 @@
-https://dicoding-air-quality-data-analysis-auzejy27dmhmzkxvr5cl6d.streamlit.app/
+streamlit: https://dicoding-air-quality-data-analysis-auzejy27dmhmzkxvr5cl6d.streamlit.app/
+github repo: https://github.com/efrado-s/dicoding-air-quality-data-analysis
